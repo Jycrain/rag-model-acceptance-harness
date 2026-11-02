@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+node_modules/
+.claude/
+.DS_Store
+# real runs and generated deliverables never go in the repo
+runs/
+runs-*/
+audit/
+*.xlsx
+*.pptx
+stats.json
+cost.json
+!examples/demo/runs/
+!examples/demo/runs/**

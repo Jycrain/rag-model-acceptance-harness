@@ -1,0 +1,8 @@
+{
+  "name": "rag-model-acceptance-harness",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deck builder dependency (the collector uses only Node built-ins)",
+  "license": "MIT",
+  "dependencies": { "pptxgenjs": "^3.12.0" }
+}

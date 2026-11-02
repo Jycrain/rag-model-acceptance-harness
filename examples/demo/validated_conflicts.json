@@ -1,0 +1,10 @@
+[
+ {
+  "dir": "runs/model-b",
+  "profile": "visitor",
+  "id": "09",
+  "response_sha256": "2ff7f03a36b480b7588bae048656a171e300d34b5c54eac36b6194763541d1f7",
+  "decided_status": "Ok - partial",
+  "note": "Demo: a bare URL is not a cited source marker; keep the rule."
+ }
+]

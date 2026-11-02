@@ -1,0 +1,31 @@
+{
+  "api": {
+    "type": "openai_chat_sse",
+    "base_url_env": "RAG_BASE_URL",
+    "route": "/v1/chat/completions"
+  },
+  "citation": { "preset": "bracket_id" },
+  "questions": "questions.json",
+  "profiles": {
+    "profile_a": { "api_key_env": "RAG_API_KEY_A" },
+    "profile_b": { "api_key_env": "RAG_API_KEY_B" }
+  },
+  "models": {
+    "model-1": { "label": "exact-label-accepted-by-the-back-end", "name": "Display name 1" },
+    "model-2": { "label": "another-label", "name": "Display name 2" }
+  },
+  "series": {
+    "model-1": { "dir": "runs/model-1", "model": "model-1" },
+    "model-2": { "dir": "runs/model-2", "model": "model-2" }
+  },
+  "timing": { "pauseMs": 1000, "timeoutMs": 120000, "retries": 1, "consecErrMax": 3 },
+  "validated_conflicts": "validated_conflicts.json",
+  "prices_per_mtok": {
+    "model-1": { "input": 0.0, "output": 0.0, "currency": "EUR", "source": "URL of the provider price page", "date": "YYYY-MM-DD" }
+  },
+  "cost_assumptions": {
+    "default": { "rag_context_tokens": { "low": 2000, "central": 6000, "high": 15000 } }
+  },
+  "_comment_api": "api.type: openai_chat_sse | json_http | command (see src/adapters.js). A route may contain {x} placeholders read from the variable named by profile.x_env (e.g. {tenant} with profile.tenant_env).",
+  "_comment_citation": "citation.preset: bracket_id | bracket_number | markdown_link | bold_prefixed | custom (see src/config.py)."
+}

@@ -1,0 +1,72 @@
+{
+ "api": {
+  "type": "openai_chat_sse",
+  "base_url_env": "RAG_BASE_URL",
+  "route": "/v1/chat/completions"
+ },
+ "citation": {
+  "preset": "bold_prefixed",
+  "prefixes": [
+   "DOC_\\d+_"
+  ],
+  "canary_marker": "**DOC_4821_borrowing_rules.txt**"
+ },
+ "questions": "questions.json",
+ "profiles": {
+  "member": {
+   "api_key_env": "RAG_API_KEY_MEMBER"
+  },
+  "visitor": {
+   "api_key_env": "RAG_API_KEY_VISITOR"
+  }
+ },
+ "models": {
+  "model-a": {
+   "label": "demo-model-a-1",
+   "name": "Model A"
+  },
+  "model-b": {
+   "label": "demo-model-b-2",
+   "name": "Model B"
+  },
+  "model-c": {
+   "label": "demo-model-c-3",
+   "name": "Model C"
+  }
+ },
+ "series": {
+  "model-a": {
+   "dir": "runs/model-a",
+   "model": "model-a"
+  },
+  "model-b": {
+   "dir": "runs/model-b",
+   "model": "model-b"
+  },
+  "model-c": {
+   "dir": "runs/model-c",
+   "model": "model-c"
+  }
+ },
+ "validated_conflicts": "validated_conflicts.json",
+ "prices_per_mtok": {
+  "model-a": {
+   "input": 0.1,
+   "output": 0.4,
+   "currency": "EUR",
+   "source": "placeholder, not a real price"
+  },
+  "model-b": {
+   "input": 0.2,
+   "output": 0.8,
+   "currency": "EUR",
+   "source": "placeholder, not a real price"
+  },
+  "model-c": {
+   "input": 0.30000000000000004,
+   "output": 1.2000000000000002,
+   "currency": "EUR",
+   "source": "placeholder, not a real price"
+  }
+ }
+}

@@ -1,0 +1,25 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - run: pip install -r requirements.txt
+      - run: python examples/demo/generate_demo.py
+      - run: python tests/test_status.py
+      - run: python tests/test_audit.py
+      - run: python tests/test_no_leak.py
+      - run: python tests/test_collect_e2e.py
+      - run: node tests/test_adapters.js
+      - run: python src/compare.py --config examples/demo/config.json --out stats.json
+      - run: python src/build_excel.py --config examples/demo/config.json --out comparison.xlsx
+      - run: python src/verify_deliverables.py --config examples/demo/config.json comparison.xlsx
+      - run: python src/cost_estimate.py --config examples/demo/config.json
+      - run: npm install --silent && node src/build_deck.js --stats examples/demo/stats.json --config examples/demo/config.json --out deck.pptx
+      - run: python compound/scripts/anonymize_check.py .
+      - run: node --check src/run_api.js && node --check src/adapters.js && node --check src/probe_model_label.js && node --check src/probe_usage.js

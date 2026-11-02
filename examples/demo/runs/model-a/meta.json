@@ -1,0 +1,8 @@
+{
+ "model": "model-a",
+ "requested_model": "demo-model-a-1",
+ "channel": "api",
+ "questions_sha256": "6b7a86b60c534ed0c2b31c7099e518694761b26196f4fa87f9d85d086d4816e7",
+ "n_questions": 10,
+ "key_tail": "\u2026demo"
+}

@@ -1,0 +1,10 @@
+# Example of the PRIVATE forbidden-terms file. Copy to ~/.config/rag-harness/forbidden-terms.local (outside the repo) and fill with the REAL terms.
+# One term per line, case-insensitive substring match. Typical categories (put the real values, never here):
+#   - client / product / platform names and their abbreviations
+#   - client and platform domains (even partial)
+#   - names of people involved
+#   - your employer's and the client's internal project names
+#   - client-specific vocabulary found in the question set or in the answers
+acme-corp
+acme-portal.example
+jane-doe
